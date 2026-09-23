@@ -8,10 +8,10 @@ def read_factures(path):
     ws = wb.active
     lines = []
 
-    for numero, fecha, emisor, total, formato in ws.iter_rows(
+    for fecha, formato, emisor, total, numero in ws.iter_rows(
         min_row=2, values_only=True
     ):
-        line = f"Factura {numero}, emitida el {fecha} por {emisor}, total {total} (formato: {formato})"
+        line = f"Número: {numero} | Fecha: {fecha} | Emisor: {emisor} | Total: {total} | Formato: {formato}"
         lines.append(line)
     resultado = "\n".join(lines)
     return resultado

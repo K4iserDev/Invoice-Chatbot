@@ -3,8 +3,8 @@ from openpyxl import load_workbook
 from config import EXCEL_PATH
 
 
-def read_factures():
-    wb = load_workbook(EXCEL_PATH)
+def read_factures(path):
+    wb = load_workbook(path)
     ws = wb.active
     lines = []
 
@@ -18,4 +18,4 @@ def read_factures():
 
 
 if __name__ == "__main__":
-    print(read_factures())
+    print(read_factures(EXCEL_PATH))
